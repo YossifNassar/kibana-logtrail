@@ -514,7 +514,7 @@ app.controller('logtrail', function ($scope, kbnUrl, $route, $routeParams,
         $scope.hosts.sort();
       } else {
         console.error('Error while fetching hosts : ' , resp.data.resp.msg);
-        $scope.errorMessage = 'Exception while fetching hosts : ' + resp.data.resp.msg;
+        //$scope.errorMessage = 'Exception while fetching hosts : ' + resp.data.resp.msg;
       }
     });
   }

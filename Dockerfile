@@ -1,6 +1,8 @@
 FROM kibana:5.5.2
 
-RUN kibana-plugin install ./logtrail.zip
+COPY kibana.zip /thePlugin/
+
+RUN kibana-plugin install file:///thePlugin/kibana.zip
 
 RUN mkdir /config && \
     mv /usr/share/kibana/plugins/logtrail/logtrail.json /config/logtrail.json && \
