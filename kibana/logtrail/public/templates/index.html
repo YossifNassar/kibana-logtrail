@@ -18,8 +18,6 @@
         <input type="text" ng-model="userSearchText" class="search-box form-control flex-item-search"
             placeholder='Example: "access denied" 1.2.3.4 -sshd'></input>
         <button class="submit btn search-btn flex-item-search" >Search</button>
-        <button type="button" id="host-picker-btn" class="btn host-option-select-btn flex-item-search"
-          ng-click="showHostPicker()">{{selectedHost == null ? 'All Systems' : selectedHost}}</button>
         <button type="button" id="date-picker-btn" class="time-option-select-btn btn flex-item-search"
           ng-click="showDatePicker()">{{ isNullorEmpty(userDateTimeSeeked) ? 'Now' : userDateTimeSeeked }}</button>
         <button type="button" id="settings-btn" class="settings-select-btn btn flex-item-search"
@@ -38,13 +36,6 @@
             {{ (isNullorEmpty(userDateTime)) ? 'Right now' : (pickedDateTime == null ? 'Cannot parse date time' : pickedDateTime)}}</label>
         </div>
       </form>
-    </div>
-
-    <div class="host-picker ng-hide" id="host-picker" click-outside>
-      <ul class="host-picker-list">
-        <li> <a href ng-click="onHostSelected('*')"> [ All Systems ] </a></li>
-        <li ng-repeat="host in hosts"><a href ng-click="onHostSelected(host)">{{host}}</a></li>
-      </ul>
     </div>
 
     <div class="settings ng-hide" id="settings" click-outside>

@@ -5,7 +5,7 @@
       "es": {
         "default_index": "containers-*"
       },
-      "tail_interval_in_seconds": 10,
+      "tail_interval_in_seconds": 1,
       "es_index_time_offset_in_seconds": 0,
       "display_timezone": "local",
       "display_timestamp_format": "MMM DD HH:mm:ss",
@@ -22,7 +22,7 @@
             "program": "kubernetes.labels.app",
             "message":"message"
         },
-        "message_format": "[{{{kubernetes.labels.environment}}}] {{{level}}}| {{{message}}}"
+        "message_format": "{{{kubernetes.labels.environment}}} | {{{level}}} | {{{message}}}"
       },
       "color_mapping" : {
         "field" : "level",
@@ -30,7 +30,7 @@
           "ERROR": "#ff3232",
           "WARN": "#ff7f24",
           "DEBUG": "#ffb90f",
-          "TRACE": "#a2cd5a"
+          "INFO": "#a2cd5a"
          }
       }
     }  
