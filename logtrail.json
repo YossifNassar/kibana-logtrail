@@ -5,7 +5,7 @@
       "es": {
         "default_index": "containers-*"
       },
-      "tail_interval_in_seconds": 1,
+      "tail_interval_in_seconds": 10,
       "es_index_time_offset_in_seconds": 0,
       "display_timezone": "local",
       "display_timestamp_format": "YYYY-MM-DD HH:mm:ss,SSS",
@@ -16,13 +16,13 @@
       "fields" : {
         "mapping" : {
             "timestamp" : "@timestamp",
-            "hostname":"kubernetes.host",
+            "hostname":"kubernetes.pod_name",
             "environment":"kubernetes.labels.environment",
             "level":"level",
             "program": "kubernetes.labels.app",
             "message":"message"
         },
-        "message_format": "{{{kubernetes.labels.environment}}} | {{{level}}} | {{{message}}}"
+        "message_format": "{{{kubernetes.labels.environment}}} | {{{kubernetes.labels.kubeCluster}}} | {{{kubernetes.labels.extraTag}}} | {{{thread}}} | {{{loggerName}}} | {{{obmethod}}} | {{{level}}} | {{{message}}} {{{exception}}}"
       },
       "color_mapping" : {
         "field" : "level",
