@@ -30,7 +30,7 @@
           "ERROR": "#ff3232",
           "WARN": "#ff7f24",
           "DEBUG": "#ffb90f",
-          "INFO": "#a2cd5a"
+          "INFO": "#FFFFFF"
          }
       }
     }  
